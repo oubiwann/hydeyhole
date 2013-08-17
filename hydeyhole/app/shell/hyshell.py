@@ -186,7 +186,7 @@ class HyTerminalRealm(base.ExecutingTerminalRealm):
     def __init__(self, namespace, apiClass=None):
         base.ExecutingTerminalRealm.__init__(self, namespace)
         if not apiClass:
-            from hydeyhole.app.shell import command
+            from hydeyhole.sdk import command
             apiClass = command.CommandAPI
 
         def getManhole(serverProtocol):
