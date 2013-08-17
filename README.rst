@@ -136,8 +136,9 @@ the virtual environment set up by the ``make`` targets:
 
 Now you can check out the ``hydeyhole`` help:
 
-  (.venv) $ twistd hydeyhole --help
+.. code:: shell
 
+  (.venv) $ twistd hydeyhole --help
   Usage: twistd [options] hydeyhole [options]
   Options:
         --version  Display Twisted version and exit.
