@@ -33,14 +33,10 @@ ssh.banner = """:
 : |   | | | . | -_| | |   | . | | -_|
 : |_|_|_  |___|___|_  |_|_|___|_|___|
 :     |___|       |___|
-:
-: You have logged into a HydeyHole Shell Server.
-: {{WELCOME}}
-: {{HELP}}
+: {{WELCOME}}{{HELP}}
 :
 : Enjoy!
-:
-"""
+:"""
 ssh.banner_welcome = """
 : You have logged onto a HydeyHole Server; you are currently at a Hy
 : command prompt. Hy is a Lisp dialect of Python of which you can

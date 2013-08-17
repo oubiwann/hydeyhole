@@ -58,13 +58,10 @@ Once you are logged in to HydeyHole, you will see something like this:
   : |_|_|_  |___|___|_  |_|_|___|_|___|
   :     |___|       |___|
   :
-  : You have logged into a HydeyHole Shell Server.
-  :
   : You have logged onto a HydeyHole Server; you are currently at a Hy
   : command prompt. Hy is a Lisp dialect of Python of which you can
   : learn more about here:
   :   https://github.com/hylang/hy
-  :
   :
   : Type '(ls)' or '(dir)' to see the objects in the current namespace.
   : Use (help ...) to get API docs for available objects.
@@ -120,7 +117,7 @@ class for each new group of commands, grouping them by a sensible taxonomy.
 This will allow users properly interpret sorted commands with the
 ``(ls "module")`` call in the shell.
 
-If you would like your new ``*API`` methods to be available to uses when the
+If you would like your new ``*API`` methods to be available to uses when they
 log in to HydeyHole, you will want to decorate them with ``@commands.add``.
 Again, spending some time looking at the API classes in the ``command`` module
 will show you what you need to do.
