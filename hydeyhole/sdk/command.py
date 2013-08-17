@@ -60,7 +60,7 @@ class BaseAPI(object):
     _subAPIs = {}
 
     def __init__(self):
-        from hydeyhole.app.shell import command
+        from hydeyhole.sdk import command
         self.command = command
 
     def _getNonSubAPIs(self):
