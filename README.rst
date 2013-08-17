@@ -116,8 +116,9 @@ Adding Functionality
 
 If you would like to add new commands to HydeyHole, you'll want to spend some
 time in ``hydeyhole.app.shell.command``. We recommend adding a new ``*API``
-class for a new group of commands. This will allow users to sort the new
-commands with the ``(ls "module")`` call in the shell.
+class for each new group of commands, grouping them by a sensible taxonomy.
+This will allow users properly interpret sorted commands with the
+``(ls "module")`` call in the shell.
 
 If you would like your new ``*API`` methods to be available to uses when the
 log in to HydeyHole, you will want to decorate them with ``@commands.add``.
