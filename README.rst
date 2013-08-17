@@ -2,7 +2,7 @@
 HydeyHole
 =========
 
-.. image:: resources/logos/hydeyhole-192.png
+.. image:: resources/logos/hydeyhole-blueback-192.png
 
 
 Dependencies
@@ -39,7 +39,7 @@ That ``make`` target will do several things:
 * start a HydeyHole server running on the configured port (the config file with
   that and other settings is in ``~/.hydeyhole/config.ini``)
 
-* ssh into it using a custom twistd command
+* ssh into it using a custom twistd command ()
 
 You may, of course, do all these things by hand if you so desire!
 
@@ -118,7 +118,7 @@ class for each new group of commands, grouping them by a sensible taxonomy.
 This will allow users properly interpret sorted commands with the
 ``(ls "module")`` call in the shell.
 
-If you would like your new ``*API`` methods to be available to uses when they
+If you would like your new ``*API`` methods to be available to users when they
 log in to HydeyHole, you will want to decorate them with ``@commands.add``.
 Again, spending some time looking at the API classes in the ``command`` module
 will show you what you need to do.
