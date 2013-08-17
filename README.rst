@@ -73,7 +73,7 @@ Once you are logged in to HydeyHole, you will see something like this:
 
 
 Using Hy in HydeyHole
-=====================
+---------------------
 
 The "help" text that you get upon login is the best first hint. You can get a
 list of available functions, modules, etc., by executing the following:
@@ -110,7 +110,7 @@ For more information on Hy, be sure to `read the docs`_!
 
 
 Adding Functionality
-====================
+--------------------
 
 If you would like to add new commands to HydeyHole, you'll want to spend some
 time in ``hydeyhole.app.shell.command``. We recommend adding a new ``*API``
@@ -124,6 +124,34 @@ Again, spending some time looking at the API classes in the ``command`` module
 will show you what you need to do.
 
 
+Using the ``twistd`` Plugin
+---------------------------
+
+If you'd like to check out the ``hydeyhole`` plugin, you'll need to switch to
+the virtual environment set up by the ``make`` targets:
+
+.. code:: shell
+
+  $ . .venv/bin/activate
+
+Now you can check out the ``hydeyhole`` help:
+
+  (.venv) $ twistd hydeyhole --help
+
+  Usage: twistd [options] hydeyhole [options]
+  Options:
+        --version  Display Twisted version and exit.
+        --help     Display this help and exit.
+  Commands:
+      keygen      Generate ssh keys for the server
+      shell       Login to the server
+      stop        Stop the server
+
+If you would like to have additional command line options added (e.g., various
+configuration settings), be sure to `submit an issue`_ for it!
+
+
 .. Links
 .. -----
 .. _read the docs: http://docs.hylang.org/en/latest/
+.. _submit an issue: https://github.com/oubiwann/hydeyhole/issues/new
