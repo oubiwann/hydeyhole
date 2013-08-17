@@ -2,7 +2,7 @@
 HydeyHole
 =========
 
-.. image:: resources/logos/hydeyhole.png
+.. image:: resources/logos/hydeyhole-192.png
 
 
 Dependencies
