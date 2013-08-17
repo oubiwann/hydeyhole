@@ -6,7 +6,9 @@ $(VENV):
 	virtualenv $(VENV)
 
 deps: $(VENV)
-	@. $(ACT) && pip install -r $(REQS)
+	for LINE in $(shell cat $(REQS)); do \
+		pip install $$LINE ; \
+	done
 
 hy-shell: deps
 	@. $(ACT) && hy
