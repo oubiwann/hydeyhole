@@ -111,8 +111,7 @@ class ShellAPI(BaseAPI):
                 "multiservice": self.appOrig._adapterCache.get(
                     "twisted.application.service.IService"),
                 "process": self.appOrig._adapterCache.get(
-                    "twisted.application.service.IProcess"),
-                }
+                    "twisted.application.service.IProcess")}
 
     def getAppData(self):
         return pprint(self.appData)
@@ -155,7 +154,8 @@ class ShellAPI(BaseAPI):
                 continue
             info = ""
             if (isinstance(value, dict) or
-                isinstance(value, list) or key == "services"):
+                isinstance(value, list) or
+                key == "services"):
                 info = "data"
             elif type(value).__name__ == "module":
                 info = value.__name__
@@ -201,7 +201,6 @@ class ShellAPI(BaseAPI):
     @commands.add
     def quit(self):
         self.terminal.loseConnection()
-
 
 
 class CommandAPI(ShellAPI):

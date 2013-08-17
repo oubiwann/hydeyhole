@@ -41,7 +41,7 @@ def raiseCallException(data):
 def checkCallResult(result):
     """
     """
-    if isinstance(result, dict) and result.has_key("error"):
+    if isinstance(result, dict) and "error" in result:
         return raiseCallException(result)
     else:
         return result
@@ -145,8 +145,10 @@ class HyInterpreter(ManholeInterpreter):
                 k = self.numDeferreds
                 d[id(obj)] = (k, obj)
                 self.numDeferreds += 1
-                obj.addCallbacks(self._cbDisplayDeferred, self._ebDisplayDeferred,
-                                 callbackArgs=(k, obj), errbackArgs=(k, obj))
+                obj.addCallbacks(self._cbDisplayDeferred,
+                                 self._ebDisplayDeferred,
+                                 callbackArgs=(k, obj),
+                                 errbackArgs=(k, obj))
         elif obj is not None:
             checkCallResult(obj)
             self.write(repr(obj))

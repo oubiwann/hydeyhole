@@ -32,8 +32,7 @@ class Options(usage.Options):
         [sshConst.KEYGEN, None, SubCommandOptions,
          "Generate ssh keys for the server"],
         [sshConst.SHELL, None, SubCommandOptions, "Login to the server"],
-        [sshConst.STOP, None, SubCommandOptions, "Stop the server"],
-        ]
+        [sshConst.STOP, None, SubCommandOptions, "Stop the server"]]
 
     def parseOptions(self, options):
         usage.Options.parseOptions(self, options)

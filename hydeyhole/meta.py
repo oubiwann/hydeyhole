@@ -13,5 +13,4 @@ requires = [
     "PyCrypto",
     "pyasn1",
     "zope.component",
-    "hy",
-    ]
+    "hy"]
