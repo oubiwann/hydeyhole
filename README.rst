@@ -24,26 +24,27 @@ server:
 
   $ make keys
 
-Once that is completed, you can do is this to start the daemon and log in:
+Once that is completed, you can do this to start the daemon and log in:
 
 .. code:: bash
 
   $ make shell
 
-This will do several things:
+That ``make`` target will do several things:
 
 * create a virtualenv
 
 * download and install deps into that env
 
-* start a HydeyHole server running on the configured port
+* start a HydeyHole server running on the configured port (the config file with
+  that and other settings is in ``~/.hydeyhole/config.ini``)
 
 * ssh into it using a custom twistd command
 
 You may, of course, do all these things by hand if you so desire!
 
-If you do wish to run things manually, keep in mind that the ``make`` targets
-use a ``virtualenv`` and it will be easiest if you do too.
+If you *do* wish to run things manually, keep in mind that the ``make`` targets
+use a ``virtualenv`` and it will be easiest if you do as well.
 
 Once you are logged in to HydeyHole, you will see something like this:
 
