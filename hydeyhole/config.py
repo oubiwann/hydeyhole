@@ -1,9 +1,9 @@
-from ConfigParser import SafeConfigParser, NoSectionError, NoOptionError
+from ConfigParser import NoSectionError, NoOptionError
 import os
 
 from zope.interface import moduleProvides
 
-from carapace.config import Config, Configurator, main, ssh
+from carapace.config import Configurator, main, ssh
 from carapace.sdk import interfaces
 
 from hydeyhole import meta
@@ -48,18 +48,19 @@ ssh.banner_help = """
 : Use (help ...) to get API docs for available objects."""
 
 
-class HydeyHoleConfigurator(object):
+class HydeyHoleConfigurator(Configurator):
     """
     """
     def __init__(self, main=None, ssh=None):
+        super(HydeyHoleConfigurator, self).__init__(main, ssh)
         self.main = main
         self.ssh = ssh
 
     def buildDefaults(self):
         config = super(HydeyHoleConfigurator, self).buildDefaults()
         config.set("SSH", "welcome", self.ssh.welcome)
-        config.set("SSH", "banner_help", self.ssh.banner_help)
         config.set("SSH", "banner_welcome", self.ssh.banner_welcome)
+        config.set("SSH", "banner_help", self.ssh.banner_help)
         return config
 
     def updateConfig(self):
@@ -78,4 +79,8 @@ def configuratorFactory():
 
 def updateConfig():
     configurator = configuratorFactory()
-    configurator.updateConfig()
+    try:
+        configurator.updateConfig()
+    except (NoSectionError, NoOptionError):
+        print ("It seems like your config file is stale; "
+               "you should generate a new one.")

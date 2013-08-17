@@ -1,10 +1,6 @@
-import inspect
+from pprint import pprint
 from operator import itemgetter
 
-from twisted.python import log
-
-from carapace.app import registry
-from carapace.app.shell import base
 from carapace.sdk import registry
 
 from hydeyhole.app import shell

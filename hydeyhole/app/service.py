@@ -1,12 +1,11 @@
 import sys
 
 from twisted.application import service, internet
-from twisted.internet import protocol
 from twisted.python import usage
 
-from carapace.sdk import const as sshConst, interfaces, registry, scripts
+from carapace.sdk import const as sshConst, registry, scripts
 
-from hydeyhole import config, meta
+from hydeyhole import meta
 from hydeyhole.app.shell.service import getHyShellFactory
 
 
@@ -37,7 +36,6 @@ class Options(usage.Options):
         ]
 
     def parseOptions(self, options):
-        config = registry.getConfig()
         usage.Options.parseOptions(self, options)
         # check options
         if self.subCommand == sshConst.KEYGEN:

@@ -6,7 +6,7 @@ import sys
 from zope.interface import implements
 
 from twisted.internet import defer
-from twisted.conch.manhole import FileWrapper, ManholeInterpreter
+from twisted.conch.manhole import ManholeInterpreter
 from twisted.python import log
 
 from carapace.app.shell import base
@@ -17,8 +17,6 @@ from hy.importer import ast_compile
 from hy.lex.machine import Machine
 from hy.lex.states import Idle, LexException
 from hy.macros import process
-
-from hydeyhole.app.shell import command
 
 
 config = registry.getConfig()
@@ -186,6 +184,7 @@ class HyTerminalRealm(base.ExecutingTerminalRealm):
     def __init__(self, namespace, apiClass=None):
         base.ExecutingTerminalRealm.__init__(self, namespace)
         if not apiClass:
+            from hydeyhole.app.shell import command
             apiClass = command.CommandAPI
 
         def getManhole(serverProtocol):
