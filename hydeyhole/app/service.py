@@ -23,11 +23,6 @@ class SubCommandOptions(usage.Options):
 class Options(usage.Options):
     """
     """
-    #optParameters = [
-    #    [const.sc.portLongOption, const.sc.portShortOption, const.sc.port,
-    #     ("The SuperCollider port number.")]
-    #    ]
-
     subCommands = [
         [sshConst.KEYGEN, None, SubCommandOptions,
          "Generate ssh keys for the server"],
