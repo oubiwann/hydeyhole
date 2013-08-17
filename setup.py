@@ -1,7 +1,6 @@
 from setuptools import setup, find_packages
 
-from hydeyhole import meta
-from hydeyhole import util
+from hydeyhole import meta, util
 
 
 setup(
