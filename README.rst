@@ -30,9 +30,17 @@ Once that is completed, you can do is this to start the daemon and log in:
 
   $ make shell
 
-This will start a HydeyHole server running on the configured port, and then
-ssh into it using a custom command. You may, of course, do all these things
-by hand if you so desire!
+This will do several things:
+
+* create a virtualenv
+
+* download and install deps into that env
+
+* start a HydeyHole server running on the configured port
+
+* ssh into it using a custom twistd command
+
+You may, of course, do all these things by hand if you so desire!
 
 If you do wish to run things manually, keep in mind that the ``make`` targets
 use a ``virtualenv`` and it will be easiest if you do too.
