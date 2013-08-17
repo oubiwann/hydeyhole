@@ -65,18 +65,58 @@ Once you are logged in to HydeyHole, you will see something like this:
   :
   :>
 
+
 Using Hy in HydeyHole
 =====================
 
-TBD
+The "help" text that you get upon login is the best first hint. You can get a
+list of available functions, modules, etc., by executing the following:
+
+.. code:: lisp
+
+  :> (ls)
+
+If you'd like to see the available objects listed in module order, you can
+do this:
+
+.. code:: lisp
+
+  :> (ls "module")
+
+Otherwise, you may do anything here that you do in Hy:
+
+.. code:: lisp
+
+  :> (+ 1 2 3 4 5 6)
+  21
+  :> (setv l [1 2 3 4 5 6])
+  :> (sum l)
+  21
+  :> (car l)
+  1
+  :> (cdr l)
+  [2, 3, 4, 5, 6]
+  :> (get l 4)
+  5
+  :>
+
+For more information on Hy, be sure to `read the docs`_!
+
 
 Adding Functionality
 ====================
 
-TBD
+If you would like to add new commands to HydeyHole, you'll want to spend some
+time in ``hydeyhole.app.shell.command``. We recommend adding a new ``*API``
+class for a new group of commands. This will allow users to sort the new
+commands with the ``(ls "module")`` call in the shell.
 
-
+If you would like your new ``*API`` methods to be available to uses when the
+log in to HydeyHole, you will want to decorate them with ``@commands.add``.
+Again, spending some time looking at the API classes in the ``command`` module
+will show you what you need to do.
 
 
 .. Links
 .. -----
+.. _read the docs: http://docs.hylang.org/en/latest/
