@@ -91,7 +91,6 @@ class HyInterpreter(ManholeInterpreter):
         namespace.update({
             "os": os,
             "sys": sys,
-            "api": self.handler.commandAPI,
             "pprint": pprint})
         # set the defined commands in the namespace
         for name in self.handler.commandAPI.getCommands():

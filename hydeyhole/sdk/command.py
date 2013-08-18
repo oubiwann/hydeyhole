@@ -11,11 +11,16 @@ config = registry.getConfig()
 
 class CommandRegistry(object):
     """
+    This class provides a global registry that tracks all the "commands"
+    (API methods) that have been set as allowed for exposure to end users.
     """
     registry = []
 
     def add(self, func):
         """
+        This methods is intended to be used as a decorator on API methods. Any
+        method that has been decorated with it will have an entry in the command
+        registry.
         """
         self.registry.append(func.func_name)
 
